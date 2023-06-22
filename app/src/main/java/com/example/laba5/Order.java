@@ -1,6 +1,11 @@
 package com.example.laba5;
 
-public class Order {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Order implements Parcelable {
     private Firm orderFirm;
     private Pack orderPack;
     private String orderFrom;
@@ -8,6 +13,22 @@ public class Order {
     private int price;
 
     private boolean box = false;
+    public static final Creator<Order> CREATOR = new Creator<Order>() {
+        @Override
+        public Order createFromParcel(Parcel source) {
+            Firm orderFirm = (Firm) source.readValue(getClass().getClassLoader());
+            Pack orderPack = (Pack) source.readValue(getClass().getClassLoader());
+            String orderFrom = source.readString();
+            String orderTo = source.readString();
+            int price = source.readInt();
+            return new Order(orderFirm, orderPack, orderFrom, orderTo, price);
+        }
+
+        @Override
+        public Order[] newArray(int size) {
+            return new Order[size];
+        }
+    };
     Order(Firm orderFirm, Pack orderPack, String orderFrom, String orderTo, int price) {
         this.orderFirm = orderFirm;
         this.orderPack = orderPack;
@@ -42,11 +63,42 @@ public class Order {
         return "Документы";
     }
 
+    public String getSize() {
+        return orderPack.getSize();
+    }
+
+    public boolean sizable(int a, int b, int c) {
+        return (orderPack.sizable(a, b, c));
+    }
+
     public void setBox(boolean box) {
         this.box = box;
     }
 
     public boolean getBox() {
         return box;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeValue(orderFirm);
+        parcel.writeValue(orderPack);
+        parcel.writeString(orderFrom);
+        parcel.writeString(orderTo);
+        parcel.writeInt(price);
+    }
+
+    @Override
+    public String toString() {
+        return orderFirm.toString() +
+        orderPack.toString() +
+        orderFrom.toString() +
+        orderTo.toString() +
+        price + "\n\n";
     }
 }

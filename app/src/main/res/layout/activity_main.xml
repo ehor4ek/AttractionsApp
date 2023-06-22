@@ -11,6 +11,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/menu_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#009688"
+            android:backgroundTint="#009688"
+            android:text="Профиль"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/info"
             android:layout_width="0dp"
@@ -22,8 +32,9 @@
             android:textColor="#130101"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/menu_btn" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -42,7 +53,7 @@
                 android:layout_weight="1"
                 android:text="Фирма"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
             <TextView
@@ -52,17 +63,17 @@
                 android:layout_weight="1"
                 android:text="Тип посылки"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="23dp"
+                android:layout_width="69dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Адрес отправки"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
             <TextView
@@ -72,7 +83,7 @@
                 android:layout_weight="1"
                 android:text="Адрес назначения"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
             <TextView
@@ -82,7 +93,7 @@
                 android:layout_weight="1"
                 android:text="Стоимость"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
 
             <TextView
@@ -92,7 +103,7 @@
                 android:layout_weight="1"
                 android:text="Выбрать"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="#FFFFFF"
                 android:textSize="13sp" />
         </LinearLayout>
 

@@ -1,8 +1,9 @@
 package com.example.laba5;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Deliver {
+public class Deliver implements Serializable {
     private String name;
     private String account;
     private String capabilities;

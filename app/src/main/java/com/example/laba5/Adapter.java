@@ -48,7 +48,7 @@ public class Adapter extends BaseAdapter {
         Order p = getOrder(position);
 
         ((TextView) view.findViewById(R.id.firm)).setText(p.getOrderFirm().getName());
-        ((TextView) view.findViewById(R.id.type)).setText(p.getType());
+        ((TextView) view.findViewById(R.id.type)).setText(p.getType() + "\n" + p.getSize());
         ((TextView) view.findViewById(R.id.ad_from)).setText(p.getOrderFrom());
         ((TextView) view.findViewById(R.id.ad_to)).setText(p.getOrderTo());
         ((TextView) view.findViewById(R.id.price)).setText(Integer.toString(p.getPrice()));
